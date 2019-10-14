@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="java.util.Date"/>
+        <!--给数据源类取别名-->
+        <import type="java.sql.Date" alias="date1"/>
+
+        <variable
+            name="user"
+            type="com.example.mvvm_demo.bean.User" />
+
+        <variable
+            name="field"
+            type="com.example.mvvm_demo.bean.UserField" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imgNet="@{user.header}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`姓名`+user.name}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{`密码`+user.password}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{`    `+field.name}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{``+  field.password}" />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="跳转页面"
+            android:onClick="skipPage"/>
+
+    </LinearLayout>
+
+</layout>
+
